@@ -30,10 +30,10 @@ const reviews = [
   },
 ];
 // select items
-const img = document.getElementById('person-img');
-const author = document.getElementById('author');
-const job = document.getElementById('job');
-const info = document.getElementById('info');
+const img = document.getElementById('profile-image');
+const author = document.getElementById('nome');
+const job = document.getElementById('cargo');
+const info = document.getElementById('description');
 
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
