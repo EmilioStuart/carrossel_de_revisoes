@@ -1,34 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Starter</title>
-    <!-- font-awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Searense</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="carousel-container">
+    <h2>Brasil: top 10 em séries hoje</h2>
+    
+    <div class="carousel top-10-carousel">
+      <div class="carousel-item top-10-item">
+        <span class="top-number">1</span>
+        <img src="https://occ-0-1306-185.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABTD4ADWdhOmJMxArHTO84Xe1zBs18gHoWcJjtelr9Odmr48GcZ4lStekXzbXYaOkQrsX_oKiTKVfULH4HTI-T9QUaR_LsbKgq44tE9rSjE5AmdZSH8x4mPNxGCOdjGRBa6s_51_zoBX_BmBvfrmpSgmNCXEYLAveFW5kDqdtvJumylNsH9eLQtn9uJUwHY1J342mSi01tTv7RRGXNAiWYmRwoyvYzFxKzf02GCrWq7BmhOCA-7dr2pR5d91MsQEejZuVip2UR9IT-cjokJSl-s3WMR5uQ3_mVSIk97IkatWTBseZSM32aj5byWrjG7aCW8aHxdqwldk_tatRCommtvzd39wdgw0F.jpg?r=7da" alt="Série 1">
+      </div>
 
-    <!-- styles -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <h1 id="titulo">Nossas Revisões</h1>
+      <div class="carousel-item top-10-item">
+        <span class="top-number">2</span>
+        <img src="https://occ-0-1306-185.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABS6RTk0xso88HUeUsCy4fDSE8nCsZnrREdNKj1Zm9pJDJ6kutOV35_5noTgWFJOvJ4HCfvT6wc2DyxNadoukyQEvSbvIi5_P49RxcomX82Q6oiUUVe9xgeuWOM4CkPF1yp26kHCph2jDgcIeYbJtILX7b6_NYSLLsCiOuVfEMOnqVq__wML_lOXw_80m1GTPaw.jpg?r=919" alt="Série 2">
+      </div>
 
-    <div id="container">
-      <img src="person-1.jpeg" alt="" id="profile-image">
-      <h2 id="nome">Nome da Pessoa</h2>
-      <h4 id="cargo">Cargo da Pessoa</h4>
-      <p id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, cum architecto maiores sapiente similique expedita eveniet labore officiis nihil. Iusto deleniti perferendis quaerat modi fugit ea repudiandae, quos obcaecati minus!</p>
-      <div id="options">
-        <div class="prev-btn"><i class="fas fa-chevron-left"></i></div>
-        <div class="next-btn"><i class="fas fa-chevron-right"></i></div>
-        <div class="random-btn"><i class="fas fa-random"></i></div>
+      <div class="carousel-item top-10-item">
+        <span class="top-number">3</span>
+        <img src="https://occ-0-1306-185.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABYSCQR8j6Z8LdvBpg2-m-126Hi1u78iqqKMlU7GZQTy-rw3N-1VhajDbQDd5WvM1GXp0VLcWhXGa-CrZ0d8LSVXdPcAeETyH958JY7x6_faDc_r3VahRjn215aBG-oDqKsz97_lcLtpkq8Ys1-oEMYx7b1LX6fBpIxrbVRs8UE5_ngAw_ZlhbyIqmzvu2DPabUCkn5T6Fw.jpg?r=3c4" alt="Série 3">
+      </div>
+
+      <div class="carousel-item top-10-item">
+        <span class="top-number">4</span>
+        <img src="https://occ-0-1306-185.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABd6hqTW-lpSKVkaT09ljMlcUoFBp4zkjT58Psz5YX_gQZMoH6p64ke5bUZY3fY2G_1wdKlFCnTjpOLFLJ1lgQyP10iU08PGqw7CCl4uxmKvs-E_b84wsvurZ1unmzIXRc0Z1_DjnXWyEuwn83DXXcYMVYNCNymClwfnMGA1DLgBJ8Kn-E521_LkoIsLkDf4YDQ.jpg?r=cda" alt="Série 4">
+      </div>
+
+      <div class="carousel-item top-10-item">
+        <span class="top-number">5</span>
+        <img src="https://occ-0-1306-185.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABWiRwd7ap1G6va89pS7cIanbaPkRYPDQ8MjV95rIf6fyJP63iJrfnW45-Z8rjiuUQF5AkMfcPqUg5MoQk4eZhC9MJrKDt_3PEb5PwIdIqRZR2fHuhigt60qF3m0zN6TWyzZJ7bW0A277m-4IJT_GFrJQrOIWqSTA-gpQwdAFYHnPKke2_S3CaMZYFuI78KVO0L9clkJ_b5JY_ZWuz_iosKF4S1p-jvYLb6sbw7KqrnfEkvgBx4eJ7-YFnCAu3IrAzUrsxJ0K1V6AQlxH71kCzVF7wMOcgdx2AvjwbDysRoCq7hHU51HZLc4DMEAZvRfX-NkZekQ4upMXYTVKSnW7_S3JFMIp4Du7.jpg?r=88e" alt="Série 5">
+      </div>
+
+      <div class="carousel-item top-10-item">
+        <span class="top-number">6</span>
+        <img src="https://occ-0-1306-185.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABR84zc1JGcyiquOlbpPidq8yCNvbUXJsDmKj_vjegjJpVhSpeSUoZXAFvj8z8Qec1hRXqeXzvQd4MF_UOI33A5xl5nM7pFMRAuZDBeAfYFyr1leyHuyldpQo3BbJOKeu3zjvcIVU6AM_w4OEXTvbljjS4TTFV3sZBVVAFcrVPPT964j2Qwi-4Mjd_I6ZtHrYGQ.jpg?r=349" alt="Série 6">
+      </div>
+
+      <div class="carousel-item top-10-item">
+        <span class="top-number">7</span>
+        <img src="https://occ-0-1306-185.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABXzAdVaD0H9UiN5GPw8wb5X44XHeb1B44G7DkqNngO1goaTV7KvsYx-Ez_NbksglCQIyjmwbh7oSHbjrd7WYuqjmeNwGFXGwnXR6xPmoZQDHIlBuyhRN75_GtmcD2J_vcO0JcDGmF-SzUgMTXvW2ui7igmXGw2L-Eh4JlQM7jbhYcg.webp?r=ada" alt="Série 7">
+      </div>
+
+      <div class="carousel-item top-10-item">
+        <span class="top-number">8</span>
+        <img src="https://occ-0-1306-185.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABakhkeIZLtkydOfQg6E4xy1qscKQL4nUmY9XrUOf9FcFYCZ61qdz3IfDXD3UKJ1lPOmT1wHxs3YYb7mW6JQTkUXPeQdNr1-oKqrtt4WTIlKqgj7lzaTn1HpZzQo_JwHpKFEIvrK_HUr7YVKKez8UP0yKudRQ5Hpa1byeOXwvIOeTyUb8jE3ooGVM8nsD61_mCg.jpg?r=1f6" alt="Série 8">
+      </div>
+
+      <div class="carousel-item top-10-item">
+        <span class="top-number">9</span>
+        <img src="https://occ-0-1306-185.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABfvVz4SSbGi9Ezuox_r-DVc6P2XR6SpSBLt7_MW3VT_QNO7dx6WdcGQ0xenqDpRGjEgrAwecXRw6PA2Vs0j3TPy4oJyCulzJJ6xYQLKbaSIynTvLc0NNPnuyB7ShMcVDRzlFJTAiGLJ9O_X-jxUO_M7hJrFkuFJ_X0I8ew.webp?r=1ba" alt="Série 9">
+      </div>
+
+      <div class="carousel-item top-10-item top-10">
+        <span class="top-number">10</span>
+        <img src="https://occ-0-1306-185.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABUQjv1v2yQMYvvFIfOV0ImBIAPkqIJPRsZxxXmhW7kGkNaqZg7H_lxGXx3cpfif-X3NRzxXYTI8L6gaBLyBhZiStZ565mF5kPMNJ9mR6oRvnUC5aFQaozAwhKdaEviak8dAdmA.jpg?r=37f" alt="Série 10">
       </div>
     </div>
 
-    <!-- javascript -->
-    <script src="app.js"></script>
-  </body>
+    <button class="carousel-btn btn-prev">&lt;</button>
+    <button class="carousel-btn btn-next">&gt;</button>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
