@@ -18,7 +18,7 @@ const dadosSeries = [
       name: 'Wandinha',
       type: '2 temporadas',
       text: "Sarcástico - Arrepiante - Humor ácido",
-      classificacao: "16",
+      classificacao: "A16",
     },
     {
       id: 4,
@@ -46,7 +46,7 @@ const dadosSeries = [
       name: 'The Chosen',
       type: '5 temporadas',
       text: "Honesto - Inspirador - Drama",
-      classificacao: "14",
+      classificacao: "A14",
     },
     {
       id: 8,
@@ -86,6 +86,7 @@ const dadosSeries = [
       else if (idade == 16) ageClass = "red";
       else ageClass == "black";
   
+
       card.innerHTML = `
         <div>
           <h3>${info.name}</h3>
@@ -93,16 +94,12 @@ const dadosSeries = [
           <p>${info.text}</p>
         </div>
         <div class="buttons">
-          <button class="play">▶ Assistir</button>
-          <button class="like">❤ Favoritar</button>
-          <button class="info">ℹ Info</button>
-        </div>
+          <button class="play">▶ Assistir</button> <button class="like">❤</button> <button class="info">ℹ</button> </div>
         <div class="age ${ageClass}">${info.classificacao}</div>
       `;
       item.appendChild(card);
     }
   });
-  
 
   const carousel = document.querySelector(".top-10-carousel");
   const nextBtn = document.querySelector(".btn-next");

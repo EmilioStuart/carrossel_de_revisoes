@@ -1,4 +1,4 @@
-/* body {
+body {
   background-color: #141414;
   color: #fff;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -23,31 +23,24 @@ h1, h2 {
   scroll-behavior: smooth;
   gap: 10px;
   padding: 30px 0;
-  height: fit-content; 
-  scrollbar-width: none; 
+  height: fit-content;
+  scrollbar-width: none;
 }
 
 .carousel::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 .carousel-item {
   flex: 0 0 auto;
-  width: 300px;
   transition: transform 0.3s ease;
   cursor: pointer;
-  margin-top: 20px;
 }
 
 .carousel-item img {
   width: 100%;
   border-radius: 5px;
   display: block;
-}
-
-.carousel-item:hover {
-  transform: scale(1.1);
-  z-index: 10;
 }
 
 .carousel-btn {
@@ -75,26 +68,22 @@ h1, h2 {
 
 .btn-prev {
   left: 0;
-  opacity: 0.25;
   border-radius: 5px;
 }
 
 .btn-next {
   right: 0;
-  opacity: 0.25;
   border-radius: 5px;
-}
-
-.top-10-carousel .carousel-item {
-  width: auto;
 }
 
 .top-10-item {
   position: relative;
   display: flex;
   align-items: center;
-  height: 150px;
-  margin-right: 120px;
+  height: 160px;
+  width: 250px;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
 }
 
 .top-number {
@@ -103,6 +92,7 @@ h1, h2 {
   color: #4d4d4d;
   z-index: 1;
   line-height: 1;
+  transition: opacity 0.3s ease;
 }
 
 .top-10-item img {
@@ -114,7 +104,7 @@ h1, h2 {
   z-index: 2;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .top-10-item:hover {
@@ -122,7 +112,7 @@ h1, h2 {
   z-index: 10;
 }
 
-.top-10 img{
+.top-10 img {
   margin-left: 90px;
 }
 
@@ -130,153 +120,98 @@ h1, h2 {
   letter-spacing: -20px;
 }
 
- */
-
-  body {
-  background: #141414;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-}
-
-.carousel-container {
-  position: relative;
-  width: 100%;
-}
-
-.carousel {
-  display: flex;
-  gap: 15px;
-  overflow: hidden;
-}
-
-.carousel-item {
-  position: relative;
-  width: 200px;
-  height: 300px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: opacity 0.3s ease;
-}
-
-/* Número Top 10 */
-
-
 .card {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #222;
+  background: #181818;
   color: #fff;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
   padding: 15px;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 3;
 }
 
-.carousel-item:hover img {
+.top-10-item:hover .card {
+  opacity: 1;
+  visibility: visible;
+}
+
+.top-10-item:hover .top-number,
+.top-10-item:hover img {
   opacity: 0;
 }
 
-.carousel-item:hover .card {
-  display: flex;
+.card h3 {
+  font-size: 1rem;
+  margin: 0 0 5px 0;
 }
 
-/* Zoom no card ao passar o mouse */
-.card:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-  z-index: 10;
+.card p {
+  font-size: 0.8rem;
+  margin: 0 0 10px 0;
 }
 
-/* Botões no card */
 .card .buttons {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .card button {
-  padding: 6px 12px;
+  padding: 8px 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .card button.play {
-  background: #e50914;
-  color: white;
+  background: #fff;
+  color: #141414;
+  padding: 8px 16px;
 }
 
-.card button.like {
-  background: #333;
-  color: white;
-}
-
+.card button.like,
 .card button.info {
-  background: #555;
+  background: rgba(42, 42, 42, .6);
+  border: 1px solid rgba(255, 255, 255, .7);
   color: white;
+  padding: 8px 12px;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.2rem;
 }
 
 .card .age {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
   font-size: 12px;
   padding: 4px 8px;
   border-radius: 3px;
-  align-self: flex-start;
   font-weight: bold;
-  color: white; 
+  color: white;
+  min-width: 30px;
+  text-align: center;
 }
 
-.card .age.yellow {
-  background-color: #ffe100; 
-}
-
-.card .age.orange {
-  background-color: #FF9800;
-}
-
-.card .age.red {
-  background-color: #F44336;
-}
-.card .age.black {
-  background-color: #000000; 
-}
-
-
-.carousel {
-  display: flex;
-  overflow: hidden; /* Esconde o que passa da tela */
-  width: 100%;
-}
-
-.top-10-carousel {
-  display: flex;
-  gap: 10px;
-  overflow-x: hidden;
-  scroll-behavior: smooth; /* rolagem suave */
-}
-
-.top-10-item {
-  flex: 0 0 auto; /* não encolher e manter tamanho */
-  width: 200px;
-  height: 300px;
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-}
+.card .age.yellow { background-color: #f5c518; }
+.card .age.orange { background-color: #ff9800; }
+.card .age.red { background-color: #f44336; }
+.card .age.black { background-color: #333; }
