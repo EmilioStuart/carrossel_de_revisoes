@@ -61,4 +61,10 @@ Enquanto a funcionalidade básica do carrossel foi mantida, essa adição cria u
 
 ---
 
+### URL da página Hospedada
+
+https://emiliostuart.github.io/carrossel_de_revisoes/
+
+---
+
 Desenvolvido por [EmilioStuart](https://github.com/EmilioStuart) e [CarolTiemy](https://github.com/CarolTiemy).
