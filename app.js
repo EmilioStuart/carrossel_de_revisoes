@@ -1,3 +1,4 @@
+// Lista com os dados que serão exibidos no carrossel
 const dadosSeries = [
   {
       id: 1,
@@ -71,51 +72,70 @@ const dadosSeries = [
     },
   ];
   
-  // Pega todos os itens do carrossel
-  document.querySelectorAll(".carousel-item").forEach((item, index) => {
-    const info = dadosSeries[index];
-    if (info) {
-      const card = document.createElement("div");
-      card.classList.add("card");
-  
-      // Define a cor da classificação
-      let ageClass = "";
-      const idade = parseInt(info.classificacao.replace("A", ""));
-      if (idade == 12) ageClass = "yellow";
-      else if (idade == 14) ageClass = "orange";
-      else if (idade == 16) ageClass = "red";
-      else ageClass == "black";
-  
+// Seleciona todos os espaços no HTML que vão receber os cards do carrossel
+document.querySelectorAll(".carousel-item").forEach((item, index) => {
+  const info = dadosSeries[index]; // pega doados da série com base no índice
+  if (info) {
+    const card = document.createElement("div"); // cria um elemento <div>
+    card.classList.add("card"); 
 
-      card.innerHTML = `
-        <div>
-          <h3>${info.name}</h3>
-          <p><b>${info.type}</b></p>
-          <p>${info.text}</p>
-        </div>
-        <div class="buttons">
-          <button class="play">▶ Assistir</button> <button class="like">❤</button> <button class="info">ℹ</button> </div>
-        <div class="age ${ageClass}">${info.classificacao}</div>
-      `;
-      item.appendChild(card);
-    }
-  });
+    // Define a cor da classificação indicativa 
+    let ageClass = "";
+    const idade = parseInt(info.classificacao.replace("A", "")); // pega apenas o numero, removendo a letra A
+    if (idade == 12) ageClass = "yellow";
+    else if (idade == 14) ageClass = "orange";
+    else if (idade == 16) ageClass = "red";
+    else ageClass = "black"; 
 
-  const carousel = document.querySelector(".top-10-carousel");
-  const nextBtn = document.querySelector(".btn-next");
-  const prevBtn = document.querySelector(".btn-prev");
-  
-  let currentIndex = 0;
-  const itemWidth = 210; 
-  
-  nextBtn.addEventListener("click", () => {
-    const maxIndex = carousel.children.length - Math.floor(carousel.offsetWidth / itemWidth);
-    if (currentIndex < maxIndex) currentIndex++;
-    carousel.scrollTo({ left: currentIndex * itemWidth, behavior: "smooth" });
+    // Monta o conteúdo do card em HTML
+    card.innerHTML = `
+      <div>
+        <h3>${info.name}</h3>
+        <p><b>${info.type}</b></p>
+        <p>${info.text}</p>
+      </div>
+      <div class="buttons">
+        <button class="play">▶ Assistir</button> 
+        <button class="like">❤</button> 
+        <button class="info">ℹ</button>
+      </div>
+      <div class="age ${ageClass}">${info.classificacao}</div>
+    `;
+
+    // Insere o card dentro do item do carrossel
+    item.appendChild(card);
+  }
+});
+
+const carousel = document.querySelector(".top-10-carousel");
+const nextBtn = document.querySelector(".btn-next");
+const prevBtn = document.querySelector(".btn-prev");
+
+let currentIndex = 0; // posição atual do carrossel
+const itemWidth = 230; // largura do espaço dar rolagem
+
+// Função que move o carrossel até o card indicado pelo índice
+function showItem(index) {
+  carousel.scrollTo({
+    left: index * itemWidth, // calcula a posição de rolagem
+    behavior: "smooth" 
   });
-  
-  prevBtn.addEventListener("click", () => {
-    if (currentIndex > 0) currentIndex--;
-    carousel.scrollTo({ left: currentIndex * itemWidth, behavior: "smooth" });
-  });
-  
+}
+
+// Botão "próximo" - move para a direita
+nextBtn.addEventListener("click", () => {
+  currentIndex++; 
+  if (currentIndex > carousel.children.length - 1) {
+    currentIndex = 0; //ao chegar no final volta para o início
+  }
+  showItem(currentIndex);
+});
+
+// Botão "anterior" - move para a esquerda
+prevBtn.addEventListener("click", () => {
+  currentIndex--; 
+  if (currentIndex < 0) {
+    currentIndex = carousel.children.length - 1; // se passou do início, vai para o último
+  }
+  showItem(currentIndex);
+});
