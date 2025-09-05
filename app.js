@@ -2,7 +2,7 @@
 const dadosSeries = [
   {
       id: 1,
-      name: 'Bon Appétit, Vossa |Majestade',
+      name: 'Bon Appétit, Vossa Majestade',
       type: 'Minissérie',
       text: "Peculiar - Romântico - De época",
       classificacao: "A12",
@@ -74,7 +74,7 @@ const dadosSeries = [
   
 // Seleciona todos os espaços no HTML que vão receber os cards do carrossel
 document.querySelectorAll(".carousel-item").forEach((item, index) => {
-  const info = dadosSeries[index]; // pega doados da série com base no índice
+  const info = dadosSeries[index]; // pega dados da série com base no índice
   if (info) {
     const card = document.createElement("div"); // cria um elemento <div>
     card.classList.add("card"); 
@@ -125,7 +125,7 @@ function showItem(index) {
 // Botão "próximo" - move para a direita
 nextBtn.addEventListener("click", () => {
   currentIndex++; 
-  if (currentIndex > carousel.children.length - 1) {
+  if (currentIndex > carousel.children.length) {
     currentIndex = 0; //ao chegar no final volta para o início
   }
   showItem(currentIndex);
